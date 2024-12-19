@@ -2,6 +2,15 @@
 
 Your ultimate window to all things anime
 
+### Why
+
+I just wanted a simple desktop application to enjoy some anime. This tool focuses on being simple, and be a single place to browse stuff
+
+### Thanks to these wonderful open-source projects
+
+- [libmpv](https://github.com/mpv-player/mpv)
+- [tauri](https://github.com/tauri-apps/tauri)
+
 ### Integrations
 
 These are just websites being loaded in a webview
@@ -12,7 +21,7 @@ These are just websites being loaded in a webview
 - Nyaa
 - Subsplease
 - AnimeTosho
-- qbittorrent
+- qbittorrent `local on port 8888`
 
 ## Dev env setup
 
@@ -33,3 +42,7 @@ cd tokei/
 npm install
 npm run tauri dev
 ```
+### Known Issues
+
+- No adblock
+- mpv hangs when it's window is closed
