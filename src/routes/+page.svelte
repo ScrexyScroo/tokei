@@ -5,7 +5,6 @@
     FileVideo,
     ChevronDown,
     ChevronRight,
-    CircleOff,
     Settings, // Added Settings icon
   } from "lucide-svelte";
   import { onMount } from "svelte";
@@ -15,6 +14,7 @@
     webviewsToHide,
   } from "$lib/utils";
   import VideoPlayer from "$lib/VideoPlayer.svelte";
+
   interface VideoDirectory {
     name: string;
     path: string;
