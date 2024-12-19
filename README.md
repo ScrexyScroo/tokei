@@ -42,7 +42,9 @@ cd tokei/
 npm install
 npm run tauri dev
 ```
+
 ### Known Issues
 
 - No adblock
 - mpv hangs when it's window is closed
+- Tauri apps often have false positives with AVs/Windows defender, see [tauri/issues/2486](https://github.com/tauri-apps/tauri/issues/2486)
