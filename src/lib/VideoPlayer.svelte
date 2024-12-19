@@ -37,7 +37,8 @@
     }
   });
 
-  onDestroy(async () => {
-    await invoke("quit_player");
-  });
+  // Introduces a bug where the player is closed when navigating to another page
+  // onDestroy(async () => {
+  //   await invoke("quit_player");
+  // });
 </script>
