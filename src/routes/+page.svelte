@@ -12,7 +12,7 @@
     fetchMediaDirectoryStructure,
     webviewsToHide,
   } from "$lib/utils";
-  import VideoPlayer from "../components/VideoPlayer.svelte";
+  import VideoPlayer from "$lib/VideoPlayer.svelte";
   interface VideoDirectory {
     name: string;
     path: string;
@@ -60,6 +60,10 @@
     currentVideo = filePath;
   }
 </script>
+
+<h1 class="text-2xl tracking-wide subpixel-antialiased font-semibold mb-4">
+  Library
+</h1>
 
 <div class="container">
   {#if currentVideo}
