@@ -21,7 +21,7 @@ These are just websites being loaded in a webview
 - Nyaa
 - Subsplease
 - AnimeTosho
-- qbittorrent `local on port 8888`
+- qbittorrent `requires qbit webui on port 8888`
 
 ## Dev env setup
 
