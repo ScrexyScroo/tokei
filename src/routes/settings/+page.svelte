@@ -72,7 +72,9 @@
     <!-- Label or Selected Path -->
     <div class="flex-1 px-3">
       {#if selectedPath}
-        {selectedPath}
+        {selectedPath.length > 15
+          ? selectedPath.slice(0, 15) + "..."
+          : selectedPath}
       {:else}
         None Selected
       {/if}
