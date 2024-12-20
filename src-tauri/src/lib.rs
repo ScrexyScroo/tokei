@@ -166,6 +166,13 @@ async fn create_child_webview(
     let main_window = app_handle.get_window("main").unwrap();
     let main_window_size = main_window.outer_size().map_err(|e| e.to_string())?;
 
+    // Calculate navbar width as a percentage of the window width
+    let navbar_width_percentage = 0.04; // 4% of window width
+    let navbar_width = (main_window_size.width as f64 * navbar_width_percentage).round() as u32;
+
+    // Get the current monitor's scale factor
+    let scale_factor = main_window.scale_factor().map_err(|e| e.to_string())?;
+
     // creates a child webview with the name eg. anilist_webview
     let webview_name = format!("{}_webview", service_name);
 
@@ -181,8 +188,13 @@ async fn create_child_webview(
                 tauri::WebviewUrl::External(Url::parse(&service_url).unwrap()),
             )
             .auto_resize(),
-            tauri::LogicalPosition::new(60., 0.),
-            tauri::LogicalSize::new(main_window_size.width - 60, main_window_size.height),
+            // Position relative to the main window, accounting for scale factor
+            tauri::LogicalPosition::new(navbar_width as f64 / scale_factor, 0.0),
+            // Size that takes into account the navbar and scale factor
+            tauri::LogicalSize::new(
+                (main_window_size.width - navbar_width) as f64 / scale_factor,
+                main_window_size.height as f64 / scale_factor,
+            ),
         )
         .map_err(|e| e.to_string())?;
 
